@@ -1,10 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `TecHero Blog`,
-    description: `Soluções digitais para a vida.`,
-    author: `@Jose`,
+    title: `José Ramos`,
+    dev: `Web Developer Full Stack`,
+    description: `Desenolvendo soluções Web para vida`,
+    author: `José Ramos`,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
