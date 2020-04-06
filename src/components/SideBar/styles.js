@@ -6,10 +6,10 @@ export const Container = styled.aside`
     background: #192734;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
     position: fixed;
-    text-align:center;
-    width: 20%;
     padding: 2rem;
+    text-align: center;
+    width: 20rem;
 
 `;

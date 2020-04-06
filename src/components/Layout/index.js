@@ -5,15 +5,15 @@ import GlobalStyle from "../../styles/global";
 
 import { LayoutWrapper, LayoutMain } from "./styles";
 import SideBar from "../SideBar";
+import MenuBar from "../MenuBar";
 
 const Layout = ({ children }) => {
   return (
     <LayoutWrapper>
-    <aside > 
-      <SideBar />
-    </aside> 
+       <SideBar />
         <LayoutMain>{children}</LayoutMain>
         <GlobalStyle />
+        <MenuBar />
     </LayoutWrapper>
   )
 }
