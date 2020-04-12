@@ -5,6 +5,7 @@ import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import Post from "../components/Post"
 import Paginator from "../components/Paginator";
+import {Container as List} from "../components/List/styled";
 
 const BlogList = props => {
     const post = props.data.allMarkdownRemark.edges;
@@ -18,6 +19,7 @@ const BlogList = props => {
     return (
         <Layout>
         <SEO title="Home" />
+        <List>
         {post.map(({node:{frontmatter:{title, date,description,category,background}, timeToRead, fields: {slug}} }, index) => (
           <Post 
           key={index}
@@ -30,6 +32,7 @@ const BlogList = props => {
           description={description}
           />
         ))}
+        </List>
         
         <Paginator 
           isFirst={isFirst}

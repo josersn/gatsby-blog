@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-
-export const Container = styled.div`
+import media from "styled-media-query"
+export const Container = styled.section`
   align-items: center;
   border-top: 1px solid var(--borders);
   color: var(--texts);
@@ -15,4 +15,10 @@ export const Container = styled.div`
       color: var(--highlight);
     }
   }
+
+  ${media.lessThan("large")`
+    font-size: .8rem;
+    padding: 1rem;
+  `}
+
 `;

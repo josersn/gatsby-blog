@@ -1,10 +1,16 @@
 import styled from 'styled-components';
+import media from "styled-media-query"
+
 
 export const Container = styled.div`
    margin: auto;
   max-width: 70rem;
   padding: 3rem 6.4rem 3rem;
   iframe[src*="ads-iframe"] {
+    ${media.lessThan("large")`
+    padding: 3rem 1.4rem 0;
+    max-width: 100%;
+  `}
     display: none;
   }
   #disqus_thread {
@@ -14,8 +20,11 @@ export const Container = styled.div`
   }
 `;
 export const CommentsTitle = styled.h2`
-  color: #fff;
+  color: var(--postColor);
   font-size: 2.1rem;
   font-weight: 700;
   padding-bottom: 2rem;
+  ${media.lessThan("large")`
+    font-size: 1.375rem;
+  `}
 `;

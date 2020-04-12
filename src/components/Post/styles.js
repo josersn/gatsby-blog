@@ -1,20 +1,35 @@
 import styled from 'styled-components';
 import { Link } from "gatsby"
+import media from "styled-media-query"
 export const Container = styled.section`
     align-items: center;
     border-bottom: 1px solid var(--borders);
   display: flex;
   padding: 2rem 3rem;
   width: 100%;
+  body#grid & {
+    border: none;
+    padding: 2rem 1rem;
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 export const PostLink = styled(Link)`
   color: var(--texts);
   display: flex;
   text-decoration: none;
+  body#grid & {
+    background-color: var(--background);
+  }
   &:hover {
     color: var(--highlight);
   }
+  ${media.lessThan("large")`
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 2rem 1rem;
+  `}
   `;
 export const PostTag = styled.div`
  align-items: center;
@@ -29,11 +44,29 @@ export const PostTag = styled.div`
   min-height: 90px;
   min-width: 90px;
   text-transform: uppercase;
+  body#grid & {
+    margin-bottom: 1.5rem;
+  }
+  ${media.lessThan("large")`
+    border-radius: 0;
+    font-size: 1rem;
+    min-height: auto;
+    min-width: auto;
+    padding: .2rem .5rem;
+    margin-bottom: .7rem;
+  `}
   `;
 export const PostInfo = styled.div`
 display: flex;
   flex-direction: column;
   margin-left: 1.5rem;
+  body#grid & {
+    line-height: 1.1;
+    margin: 0.8rem 0;
+  }
+  ${media.lessThan("large")`
+    margin: 0;
+  `}
   `;
 export const PostDate = styled.time`
  font-size: 0.9rem;

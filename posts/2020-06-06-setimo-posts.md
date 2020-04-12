@@ -4,6 +4,7 @@ title: Setimo posts
 description: Lorem ipsun dolar a pet  universe
 category: js
 background: "#7AAB13"
+image: "assets/img/logo.png"
 ---
 
 # Lorem ipsum

@@ -8,15 +8,15 @@ const Logo = () => {
         query{
             Logotype: file(relativePath: {eq: "logo.png"}){
                 childImageSharp{
-                    fixed(width: 200, height:  64){
-                        ...GatsbyImageSharpFixed
+                    fluid(maxWidth: 200){
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }
         }
       `
   )
-  return <S.Container  fixed={Logotype.childImageSharp.fixed} />
+  return <S.Container  fluid={Logotype.childImageSharp.fluid} />
 }
 
 export default Logo;
