@@ -4,7 +4,7 @@ import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits, Stats } from 'react-instantsearch-dom';
 
 import { Container } from "./styles";
-import hit from "./hit";
+import hit from "./Hit";
 const algolia = {
     appId: process.env.GATSBY_ALGOLIA_APP_ID,
     searchOnlyApiKey: process.env.GATSBY_ALGOLIA_SEARCH_KEY,
