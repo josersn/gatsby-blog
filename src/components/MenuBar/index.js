@@ -16,7 +16,7 @@ const MenuBar = () => (
                 <MenuBarItem> <Home /> </MenuBarItem>
             </MenuBarLink> 
 
-            <MenuBarLink to="/about" title="Pesquisar">
+            <MenuBarLink to="/search" title="Pesquisar">
                 <MenuBarItem><Search /></MenuBarItem>
             </MenuBarLink> 
         </MenuBarGroup>

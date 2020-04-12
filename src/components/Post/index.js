@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { PostLink, background, Container, PostTag, PostTitle, PostInfo, PostDate, PostDescription } from "./styles.js";
+import { PostLink, Container, PostTag, PostTitle, PostInfo, PostDate, PostDescription } from "./styles.js";
  
 const Post = ({ slug, category,background, date,timeToRead, title, description }) => (
     <PostLink to={slug}>

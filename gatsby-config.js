@@ -1,3 +1,5 @@
+require('dotenv').config();
+const queries = require("./src/util/argoliaQueryes")
 module.exports = {
   siteMetadata: {
     title: `José Ramos`,
@@ -11,8 +13,55 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `uploads`,
+        path: `${__dirname}/src/static/assets/img`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/posts`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-relative-images-v2",
+            options: {
+              name: "uploads"
+            }
+          },
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWitdh: 900,
+              linkImagesToOriginal: false
+            }
+          },
+          `gatsby-remark-lazy-load`,
+          `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-plugin-algolia-search`,
+            options: {
+              appId: process.env.GATSBY_ALGOLIA_APP_ID,
+              apiKey: process.env.GATSBY_ALGOLIA_ADMIN_KEY,
+              indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
+              queries,
+              chunkSize: 5000, 
+              enablePartialUpdates: true,
+            },
+          },  
+        ],
       },
     },
     `gatsby-transformer-sharp`,
